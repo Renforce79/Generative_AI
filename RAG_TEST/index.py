@@ -1,15 +1,19 @@
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = OpenAI()
 
-text = "Este es un documento sobre arquitectura de datos."
+texto = "Renato es Data Engineer y trabaja con Python, PostgreSQL y tecnologías cloud."
 
 response = client.embeddings.create(
-    input=text,
+    input=texto,
     model="text-embedding-3-small"
 )
 
 embedding = response.data[0].embedding
 
-print(f"Dimensiones: {len(embedding)}")
-print(embedding[:5])
+print("Embedding generado correctamente")
+print("Dimensiones:", len(embedding))
+print("Primeros 10 valores:", embedding[:10])
