@@ -1,2 +1,4 @@
 RAG_TEST/.env
 RAG_TEST/constants.py
+__pycache__/
+*.py[cod]
